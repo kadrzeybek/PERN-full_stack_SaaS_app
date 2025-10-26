@@ -8,5 +8,13 @@
 }
 
 @theme{
-    --color-primary: #5044E5;
+    --color-primary: #7f9c3f;
+}
+
+.reset-tw, .reset-tw * {
+    all: revert !important;
+}
+
+.cl-drawerRoot {
+    z-index: 10;
 }
