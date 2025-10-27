@@ -11,27 +11,23 @@ const CreationItem = ({item}) => {
                 <h2>{item.prompt}</h2>
                 <p className="text-gray-500">{item.type} - {new Date(item.created_at).toLocaleDateString()}</p>
             </div>
-            <button className="text-[#1E40AF] px-4 py-1 rounded-full bg-[#EFF6FF] border border-[#BFDBFE]">{item.type}</button>
+            <button className="text-[#0fa416] px-4 py-1 rounded-lg min-w-24 bg-[#effff2] border border-[#b3f9a7]">{item.type}</button>
         </div>
-        {
-            expanded && (
-                <div>
-                    {item.type === 'image' ? (
-                        <div>
-                            <img src={item.content} alt="image" className="w-full max-w-md" />
-                        </div>
-                    ) :(
-                        <div className="mt-3 h-full overflow-y-scroll max-h-100 text-sm text-slate-700">
-                            <div className='reset-tw'>
-                                <MarkDown>
+        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expanded ? 'max-h-100 opacity-100' : 'max-h-0 opacity-0 mt-0'}`}>
+                {item.type === 'image' ? (
+                    <div>
+                        <img src={item.content} alt="image" className="w-full max-w-md" />
+                    </div>
+                ) : (
+                    <div className="mt-3 max-h-80 overflow-y-auto text-sm text-slate-700 bg-gray-50 p-2 rounded-lg">
+                        <div className='reset-tw'>
+                            <MarkDown>
                                 {item.content}
-                                </MarkDown>
-                            </div>
+                            </MarkDown>
                         </div>
-                    )}
-                </div>
-            )
-        }
+                    </div>
+                )}
+        </div>
     </div>
   )
 }

@@ -17,7 +17,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="overflow-y-scroll h-full p-6 ">
+    <div className=" h-full p-6 ">
       <div className=' flex justify-center gap-4 flex-wrap'>
         {/* Total Creations Card */}
         <div className='flex w-full sm:flex-2 justify-between items-center p-4 px-6 bg-white rounded-xl border border-gray-200'>
@@ -25,7 +25,7 @@ const Dashboard = () => {
             <p className='text-sm'>Total Creations</p>
             <h2 className='text-xl font-semibold'>{creations.length}</h2>
           </div>
-          <div className='flex justify-center items-center text-white w-10 h-10 rounded-lg bg-gradient-to-br from-[#3588F2] to-[#0BB0D7]'>
+          <div className='flex justify-center items-center text-white w-10 h-10 rounded-lg bg-linear-to-br from-[#3588F2] to-[#0BB0D7]'>
             <Sparkles className='w-5 text-white' />
           </div>
         </div>
@@ -37,7 +37,7 @@ const Dashboard = () => {
               <Protect plan='premium_user' fallback="Free">Premium</Protect> Plan
             </h2>
           </div>
-          <div className='flex justify-center items-center text-white w-10 h-10 rounded-lg bg-gradient-to-br from-[#FF61C5] to-[#9E53EE]'>
+          <div className='flex justify-center items-center text-white w-10 h-10 rounded-lg bg-linear-to-br from-[#FF61C5] to-[#9E53EE]'>
             <Sparkles className='w-5 text-white' />
           </div>
         </div>

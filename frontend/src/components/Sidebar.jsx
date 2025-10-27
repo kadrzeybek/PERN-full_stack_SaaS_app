@@ -18,16 +18,16 @@ const Sidebar = ({sidebar, setSidebar}) => {
     const { signOut, openUserProfile } = useClerk()
 
   return (
-    <div className={`flex flex-col justify-between items-center max-sm:absolute top-14 w-60 bg-white border-r border-gray-200 bottom-0 ${sidebar ? 'translate-x-0' : 'max-sm:-translate-x-full'} transition-all duration-300 ease-in-out`}>
+    <div className={`flex flex-col justify-between items-center max-sm:absolute top-14 w-62 bg-white border-r border-gray-200 bottom-0 ${sidebar ? 'translate-x-0' : 'max-sm:-translate-x-full'} transition-all duration-300 ease-in-out`}>
       <div className='w-full my-7'>
         <img src={user.imageUrl} alt="userImg" className='w-13 rounded-full mx-auto' />
         <h1 className='text-center mt-1'>{user.fullName}</h1>
         <div className='px-6 mt-5 text-sm text-gray-600 font-medium'>
-            {navItems.map(({to, label, Icon}) => (
-                <NavLink key={to} to={to} end={to === '/ai'} onClick={() => setSidebar(false)} className={({isActive}) => `px-3.5 py-2.5 flex items-center gap-3 rounded ${isActive ? 'bg-gradient-to-r from-[#d0d628] to-[#53d627] text-white' : ''}`}>
+            {navItems.map(({to, label, Icon: Icon}) => (
+                <NavLink key={to} to={to} end={to === '/ai'} onClick={() => setSidebar(false)} className={({isActive}) => `px-3.5 py-2.5 flex items-center gap-3 rounded ${isActive ? 'bg-linear-to-r from-[#d0d628] to-[#53d627] text-white' : ''}`}>
                     {({isActive}) =>(
                         <>
-                        <Icon className={`w-4 h-4 ${isActive ? 'text-white' : ''}`} />
+                        <Icon className={`size-4 ${isActive ? 'text-white' : ''}`} />
                         {label}
                         </>
 

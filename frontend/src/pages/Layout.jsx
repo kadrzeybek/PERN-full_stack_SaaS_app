@@ -21,7 +21,7 @@ const Layout = () => {
           : <Menu className='size-6 text-gray-600 sm:hidden' onClick={() => setSidebar(true)} /> 
         }
       </nav>
-      <div className='flex flex-1 w-full h-[calc(100vh-64px)]'>
+      <div className='flex flex-1 w-full h-full'>
         <Sidebar sidebar={sidebar} setSidebar={setSidebar} />
         <div className='flex-1 bg-[#F4F7FB]'>
         <Outlet />
