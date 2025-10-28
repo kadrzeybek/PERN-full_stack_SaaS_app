@@ -18,7 +18,9 @@ const Sidebar = ({sidebar, setSidebar}) => {
     const { signOut, openUserProfile } = useClerk()
 
   return (
-    <div className={`flex flex-col justify-between items-center max-sm:absolute top-14 w-62 bg-white border-r border-gray-200 bottom-0 ${sidebar ? 'translate-x-0' : 'max-sm:-translate-x-full'} transition-all duration-300 ease-in-out`}>
+
+    
+    <div className={`flex flex-col justify-between items-center max-sm:absolute top-14 w-62 bg-white border-r border-gray-200 bottom-0 z-50 ${sidebar ? 'translate-x-0' : 'max-sm:-translate-x-full'} transition-all duration-300 ease-in-out`}>
       <div className='w-full my-7'>
         <img src={user.imageUrl} alt="userImg" className='w-13 rounded-full mx-auto' />
         <h1 className='text-center mt-1'>{user.fullName}</h1>

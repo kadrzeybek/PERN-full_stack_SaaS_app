@@ -20,7 +20,7 @@ const Community = () => {
 
   return (
     <div className='flex flex-1 h-full flex-col gap-4 p-6'>
-      Creation
+      Creations
       <div className='h-full w-full  rounde-xl rounded-xl bg-white overflow-y-auto'>
         {
           creations.map((creation, index) => (
