@@ -32,7 +32,7 @@ export const generateArticle = async(req,res) => {
                 },
             ],
             temperature: 0.7,
-            max_tokens: length
+            max_tokens: length* 1.6
 
         });
 
