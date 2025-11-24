@@ -3,7 +3,10 @@ import sql from "../config/db.js";
 import { clerkClient } from "@clerk/express";
 import axios from "axios";
 import fs from 'fs';
-import * as pdf from 'pdf-parse';
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
+const { PDFParse } = require("pdf-parse");
 
 import { v2 as cloudinary } from 'cloudinary'
 
@@ -206,19 +209,24 @@ export const resumeReview = async(req,res) => {
         const { userId } = req.auth();
         const resume =req.file;
         const plan = req.plan;
+        
 
         if (plan !== 'premium_user') {
             return res.json({success: false, message: "This feature is only avaible for premium subsriptions"})
         }
 
-        if (resume.size > 5 * 10024 * 1024) {
+        if (resume.size > 5 * 1024 * 1024) {
             return res.json({success:false, message:'Resume file size exceeds allowed size (5MB).'})
         }
 
         const dataBuffer = fs.readFileSync(resume.path);
-        const pdfData = await pdf(dataBuffer);
 
-        const prompt = `Reviwe the following resume and provide constructive feedback on its strengths, weaknesses and areas for improvement. Resume Content:\n\n${pdfData.text}`
+        
+        const parser = new PDFParse({ data: dataBuffer });
+        const result = await parser.getText();
+        await parser.destroy();
+
+        const prompt = `Reviwe the following resume and provide constructive feedback on its strengths, weaknesses and areas for improvement. Resume Content:\n\n${result.text}`
 
         const response = await AI.chat.completions.create({
             model: "gemini-2.0-flash",
@@ -229,7 +237,6 @@ export const resumeReview = async(req,res) => {
                 },
             ],
             temperature: 0.7,
-            max_tokens: 1000
 
         });
 
