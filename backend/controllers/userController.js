@@ -16,7 +16,7 @@ export const getUserCreations = async (req,res) =>{
 export const getPublicCreations = async (req,res) =>{
     try {
 
-        const creations = await sql`SELECT * FROM creations WHERE public = true ORDER BY created_at DESC`
+        const creations = await sql`SELECT * FROM creations WHERE publish = true ORDER BY created_at DESC`
         
         res.json({success: true, creations})
 
@@ -52,9 +52,9 @@ export const toggleLikeCreations = async (req,res) =>{
             message = 'Creation Liked'
         }
 
-        const formattedArray = `{${updatedLikes.json(',')}}`
+        const formattedArray = `{${updatedLikes.join(',')}}`
 
-        await sql`UPDATE creations SET likes = ${formattedArray}::text[] WHERE id ${id}`
+        await sql`UPDATE creations SET likes = ${formattedArray}::text[] WHERE id = ${id}`
         
         res.json({success: true, message})
 

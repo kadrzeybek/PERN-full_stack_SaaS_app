@@ -66,10 +66,10 @@ const RemoveObject = () => {
         </button>
     </form>
     {/* Right col */}
-    <div className='w-full lg:flex-1 p-4 bg-white rounded-lg flex flex-col border border-gray-200 min-h-96'>
+    <div className='w-full lg:flex-1 p-4 bg-white rounded-lg flex flex-col border border-gray-200 min-h-96 max-h-[90vh]'>
         <div className='flex items-center gap-3'>
           <Scissors className='size-5 text-[#4A7AFF]' />
-          <h1 className='text-xl font-semibold'>Processed Images</h1>
+          <h1 className='text-xl font-semibold'>Processed Image</h1>
         </div>
         { !content ? (
         <div className='flex flex-1 justify-center items-center'>
@@ -79,8 +79,8 @@ const RemoveObject = () => {
           </div>
         </div>
         ) : (
-          <div mt-3 h-full>
-          <img src={content} alt="image" className='w-full h-full'/>
+          <div className='mt-3 flex justify-center max-h-[83vh]'>
+          <img src={content} alt="" className='object-contain max-h-full'/>
         </div>
         )
         }

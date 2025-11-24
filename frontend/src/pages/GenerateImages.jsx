@@ -25,7 +25,7 @@ const GenerateImages = () => {
       e.preventDefault();
       try {
         setLoading(true);
-        const prompt = `Generate an imafe of ${input} in the style ${selectedStyle}`
+        const prompt = `Generate an image of ${input} in the style ${selectedStyle}`
         const { data } = await axios.post('/api/ai/generate-image', {prompt, publish},{
           headers: {Authorization: `Bearer ${await getToken()}`}})
   
@@ -77,7 +77,7 @@ const GenerateImages = () => {
     <div className='w-full lg:flex-1 p-4 bg-white rounded-lg flex flex-col border border-gray-200 min-h-96 max-h-[600px]'>
         <div className='flex items-center gap-3'>
           <Image className='size-5 text-[#4A7AFF]' />
-          <h1 className='text-xl font-semibold'>Generated Images</h1>
+          <h1 className='text-xl font-semibold'>Generated Image</h1>
         </div>
         {!content ? (
           <div className='flex flex-1 justify-center items-center'>
@@ -86,9 +86,9 @@ const GenerateImages = () => {
             <p>Enter a topic and click "Generate Image" to get started.</p>
           </div>
         </div>) : (
-          <div mt-3 h-full>
-            <img src={content} alt="" className='w-full h-full'/>
-          </div>
+          <div className='mt-3 flex justify-center max-h-[83vh]'>
+          <img src={content} alt="" className='object-contain max-h-full'/>
+        </div>
         )}
         
     </div>

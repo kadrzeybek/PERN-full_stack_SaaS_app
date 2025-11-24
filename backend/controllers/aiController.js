@@ -108,14 +108,17 @@ export const generateBlogTitle = async(req,res) => {
 }
 
 export const generateImage = async(req,res) => {
+    console.log("Deneme")
     try {
         const { userId } = req.auth();
         const { prompt, publish } = req.body;
         const plan = req.plan;
 
+        
         if (plan !== 'premium_user') {
             return res.json({success: false, message: "This feature is only avaible for premium subsriptions"})
         }
+        
 
         // const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}`;
 
@@ -140,6 +143,7 @@ export const generateImage = async(req,res) => {
         res.json({success:true, content:secure_url})
 
     } catch (error) {
+        
         console.log(error.message)
         res.json({success:false, message:error.message})
     }

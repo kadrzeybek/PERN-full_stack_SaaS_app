@@ -62,7 +62,7 @@ const ReviewResume = () => {
     <div className='w-full lg:flex-1 p-4 bg-white rounded-lg flex flex-col border border-gray-200 min-h-96 max-h-[90vh]'>
         <div className='flex items-center gap-3'>
           <FileText className='size-5 text-[#e2df16]' />
-          <h1 className='text-xl font-semibold'>Anlaysis Results</h1>
+          <h1 className='text-xl font-semibold'>Analysis Result</h1>
         </div>
         { !content ? (
           <div className='flex flex-1 justify-center items-center'>
