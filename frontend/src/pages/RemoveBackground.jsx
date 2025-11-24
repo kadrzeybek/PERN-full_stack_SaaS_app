@@ -25,7 +25,7 @@ const RemoveBackground = () => {
         {headers: {Authorization: `Bearer ${await getToken()}`}})
 
         if(data.success) {
-          setContent(data.image);
+          setContent(data.content);
         } else {
           toast.error(data.message);
         }
