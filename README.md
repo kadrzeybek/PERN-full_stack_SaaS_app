@@ -312,38 +312,6 @@ Content-Type: multipart/form-data
 }
 ```
 
-## � Screenshots
-
-<div align="center">
-
-### Homepage & Dashboard
-| Homepage | Dashboard |
-|----------|-----------|
-| ![Homepage](screenshots/homepage.png) | ![Dashboard](screenshots/dashboard.png) |
-| *Landing page with hero section and features* | *User dashboard with AI tools overview* |
-
-### AI Content Generation
-| Write Article | Generate Blog Titles | Generate Images |
-|--------------|---------------------|-----------------|
-| ![Write Article](screenshots/write-article.png) | ![Generate Titles](screenshots/generate-titles.png) | ![Generate Images](screenshots/generate-images.png) |
-| *AI-powered article writing* | *Blog title generation tool* | *AI image generation from prompts* |
-
-### Image Processing Tools
-| Remove Object | Remove Background |
-|--------------|-------------------|
-| ![Remove Object](screenshots/remove-object.png) | ![Remove Background](screenshots/remove-background.png) |
-| *AI object removal from images* | *Background removal tool* |
-
-### Additional Features
-| Review Resume | Community |
-|--------------|-----------|
-| ![Review Resume](screenshots/review-resume.png) | ![Community](screenshots/community.png) |
-| *AI-powered resume analysis* | *User community and shared content* |
-
-</div>
-
-> **Note**: Screenshots are coming soon! Replace the placeholder paths above with actual screenshots of your application.
-
 ## �📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
