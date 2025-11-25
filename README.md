@@ -56,9 +56,6 @@ A comprehensive full-stack Software as a Service (SaaS) application that leverag
   </table>
 </div>
 
-
-> **📁 Screenshots Klasörü**: Yukarıdaki görseller `screenshots/` klasöründe bulunmalıdır. Her bir sayfa ve özellik için ekran görüntüleri alıp ilgili dosya adıyla kaydedin.
-
 ## ✨ Features
 
 ### 🎯 Core AI Services
