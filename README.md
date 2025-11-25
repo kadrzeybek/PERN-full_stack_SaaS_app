@@ -2,7 +2,6 @@
 
 A comprehensive full-stack Software as a Service (SaaS) application that leverages cutting-edge AI technologies to provide various content creation and image processing services. Built with modern web technologies and designed for scalability and performance.
 
-![License](https://img.sh## 📝 License.io/badge/License-MIT-blue)
 ![Node.js](https://img.shields.io/badge/Node.js-20+-green)
 ![React](https://img.shields.io/badge/React-18+-blue)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3+-38B2AC)
