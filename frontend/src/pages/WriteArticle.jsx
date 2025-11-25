@@ -79,7 +79,7 @@ const WriteArticle = () => {
       {/* Right col */}
       <div className='w-full lg:flex-1 p-4 bg-white rounde-lg flex flex-col border border-gray-200 min-h-96 max-h-[600px]'>
           <div className='flex items-center gap-3'>
-            
+            <Edit className='w-6 text-[#00AD25]'/>
             <h1 className='text-xl font-semibold'>Generated Article</h1>
           </div>
           {!content ? (
