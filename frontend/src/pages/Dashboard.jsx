@@ -37,10 +37,10 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className=" h-full p-6 ">
+    <div className="flex flex-1 h-full flex-col p-6">
       <div className=' flex justify-center gap-4 flex-wrap'>
         {/* Total Creations Card */}
-        <div className='flex w-full sm:flex-2 justify-between items-center p-4 px-6 bg-white rounded-xl border border-gray-200'>
+        <div className='flex w-full justify-between items-center p-4 px-6 bg-white rounded-xl border border-gray-200'>
           <div className='text-slate-600'>
             <p className='text-sm'>Total Creations</p>
             <h2 className='text-xl font-semibold'>{creations.length}</h2>
@@ -50,7 +50,7 @@ const Dashboard = () => {
           </div>
         </div>
         {/* Active Plan Name Card */}
-        <div className='flex sm:flex-2 justify-between items-center w-full p-4 px-6 bg-white rounded-xl border border-gray-200'>
+        <div className='flex justify-between items-center w-full p-4 px-6 bg-white rounded-xl border border-gray-200'>
           <div className='text-slate-600'>
             <p className='text-sm'>Active Plan</p>
             <h2 className='text-xl font-semibold'>
@@ -70,11 +70,14 @@ const Dashboard = () => {
         </div>
       ) :
       (
-        <div className='space-y-3 overflow-y-auto max-h-[80vh] '>
+        <div className='space-y-3 max-w-full'>
           <p className='mt-6 mb-4'>Recent Creations</p>
+          <div className='overflow-y-auto flex flex-col gap-4 mb-6 max-h-[65vh]'>
           {
             creations.map((item) => <CreationItem key={item.id} item={item} />)
           }
+          </div>
+          
       </div>
         
       )
